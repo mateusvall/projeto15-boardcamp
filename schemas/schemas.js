@@ -17,7 +17,7 @@ export const gameSchema = joi.object({
 
 export const customerSchema = Joi.object({
     name: Joi.string().required(),
-    phone: Joi.string().required(),
-    cpf: Joi.string().required(),
+    phone: Joi.string().length(11).pattern(/^[0-9]+$/).required(),
+    cpf: Joi.string().length(11).pattern(/^[0-9]+$/).required(),
     birthday: Joi.date().format('YYYY-MM-DD').required()
 })

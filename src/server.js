@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import categoriesRouter from "../routes/categories.router.js";
 import gamesRouter from "../routes/games.router.js";
+import customersRouter from "../routes/customers.router.js";
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 
 app.use(categoriesRouter);
 app.use(gamesRouter);
+app.use(customersRouter)
 app.get('/status', (req, res) => {
     const { name } = req.query;
     console.log(name);
